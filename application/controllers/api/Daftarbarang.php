@@ -29,6 +29,8 @@ class Daftarbarang extends BD_Controller {
             
             foreach ($val->result() as $key ) {
                 $key->qrcode = base_url('qrcode/'.$key->id_barang.'.png');
+                $link = explode("=", $key->link);
+                $key->link = $link[1];
             }
             $this->response(["list_barang"=>$val->result()], REST_Controller::HTTP_OK);       
         

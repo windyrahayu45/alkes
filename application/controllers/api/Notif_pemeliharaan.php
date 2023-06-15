@@ -19,14 +19,14 @@ class Notif_pemeliharaan extends BD_Controller {
 
         $tgl_awal =  date('Y-m-d', strtotime('+6 month' , strtotime(date($tgl_awal_pemeliharaan))));
 
-        $tgl_akhir =  date('Y-m-d', strtotime('+7 days' , strtotime(date($tgl_awal))));
+        $tgl_akhir =  date('Y-m-d', strtotime('+30 days' , strtotime(date($tgl_awal))));
 
         $date1= date('Y-m-d');
         if((strtotime($date1) <= strtotime($tgl_akhir)) && (strtotime($date1) >= strtotime($tgl_awal))){
             
             $this->response([
                     'error' => false,
-                    'message' => 'Segera lakukan Pemeliharaan Berkala Seminnggu Sejak Tgl '. $tgl_awal
+                    'message' => 'Segera lakukan Pemeliharaan Berkala Sebulan Sejak Tgl '. $tgl_awal
             ], REST_Controller::HTTP_OK);  
 
         }else { 

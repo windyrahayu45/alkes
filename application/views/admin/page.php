@@ -39,7 +39,7 @@
        <div class="col-12 col-sm-12 col-lg-12">
           <div class="card">
             <div class="card-header">
-              <h4>Jumlah Peralatan Medis Per Bulan Tahun Ini</h4>
+              <h4>Jumlah Peralatan Medis Per  Tahun </h4>
               <div class="card-header-action">
                 
              
@@ -131,10 +131,10 @@
 var myChart = new Chart(ctx, {
   type: 'bar',
   data: {
-    labels: ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli","Agustus","September","Oktober","November","Desember"],
+    labels: [<?=date('Y')?>,<?=date('Y')-1?>,<?=date('Y')-2?>],
     datasets: [{
       label: 'Statistics',
-      data: [<?=$bulan1?>, <?=$bulan2?>, <?=$bulan3?>, <?=$bulan4?>, <?=$bulan5?>, <?=$bulan6?>, <?=$bulan7?>,<?=$bulan8?>,<?=$bulan9?>,<?=$bulan10?>,<?=$bulan11?>,<?=$bulan12?>],
+      data: [<?=$bulan0?>, <?=$bulan1?>, <?=$bulan2?>],
       borderWidth: 2,
       backgroundColor: '#6777ef',
       borderColor: '#6777ef',

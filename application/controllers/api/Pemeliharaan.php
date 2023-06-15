@@ -19,7 +19,7 @@ class Pemeliharaan extends BD_Controller {
 
         $tgl_awal =  date('Y-m-d', strtotime('+6 month' , strtotime(date($tgl_awal_pemeliharaan))));
 
-        $tgl_akhir =  date('Y-m-d', strtotime('+7 days' , strtotime(date($tgl_awal))));
+        $tgl_akhir =  date('Y-m-d', strtotime('+30 days' , strtotime(date($tgl_awal))));
 
         $date1= date('Y-m-d');
         if((strtotime($date1) <= strtotime($tgl_akhir)) && (strtotime($date1) >= strtotime($tgl_awal))){
@@ -44,9 +44,11 @@ class Pemeliharaan extends BD_Controller {
             $this->db->where('a.id_status',2);
             $this->db->where('a.id_barang not in (select id_barang from afkir)');
             $val=$this->db->get();
+
+
         }
         
-       // echo $this->db->last_query();die;
+       //echo $this->db->last_query();die;
 
 
         if ($val->num_rows()>0){

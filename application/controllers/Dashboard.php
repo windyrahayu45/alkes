@@ -24,16 +24,21 @@ class Dashboard extends CI_Controller {
         $data['total'] = $this->general2->lihatisitabel('data_barang',null)->num_rows();
 
         $data['afkir'] = $this->general2->lihatisitabel('afkir',null)->num_rows();
-
-        for ($i=1; $i <= 12 ; $i++) { 
+        $year = date("Y");
+        $label = array();
+        for ($i=0; $i <= 2 ; $i++) { 
 
         	$this->db->SELECT('a.*');
 	        $this->db->from('data_barang a');
-	        $this->db->where('MONTH(a.tgl)', $i);
-	        $this->db->where('YEAR(a.tgl)', date('Y'));
+	        //$this->db->where('MONTH(a.tgl)', $i);
+	        $this->db->where('YEAR(a.tgl)', ( $year -$i));
         	$data["bulan".$i] = $this->db->get()->num_rows();
+        	
+			$label[]= $year -$i;
+			
         }
-       
+       	$data['label'] = $label;
+       //	print_r($data);die();
 		$data['page']='admin/page';
 		$this->load->view('main_page/main',$data);
 		

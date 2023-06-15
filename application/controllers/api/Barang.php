@@ -25,6 +25,9 @@ class Barang extends BD_Controller {
             if($val->row()->id_ruangan == $id_ruangan){
                 $this->response(["Qr_barang"=>$val->row()], REST_Controller::HTTP_OK);
             }
+            else if($id_ruangan==""){
+                $this->response(["Qr_barang"=>$val->row()], REST_Controller::HTTP_OK);
+            }
             else{
                 $this->response([
                         'error' => TRUE,

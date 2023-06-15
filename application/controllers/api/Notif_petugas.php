@@ -16,7 +16,7 @@ class Notif_petugas extends BD_Controller {
 
       
     
-        $val = $this->general2->lihatisitabel('mutasi',['id_ruangan'=>$id_ruangan,'tgl_dikembalikan'=>date('Y-m-d'),'status_mutasi'=>'Belum Dikembalikan']);
+        $val = $this->general2->lihatisitabel('mutasi',['id_ruangan'=>$id_ruangan,'tgl_dikembalikan'=>date('Y-m-d'),'status_mutasi'=>'Belum Dikembalikan','jenis_mutasi'=>'Peminjaman']);
 
         if ($val->num_rows()>0){
            

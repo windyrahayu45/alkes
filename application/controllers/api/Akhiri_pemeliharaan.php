@@ -38,7 +38,7 @@ class Akhiri_pemeliharaan  extends BD_Controller {
         else{
 
             $where2['id_barang'] = $id_barang;
-            $data3['id_status'] = $this->post('kondisi_setelah');
+            $data3['id_status'] = $data['kondisi_sesudah'];
             $update = $this->general2->update_data($where2,$data3,'data_barang');
 
         }

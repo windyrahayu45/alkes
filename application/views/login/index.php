@@ -34,7 +34,7 @@
       <div class="wrap-login100">
         <div class="login100-form-title" style="background-image: url(<?=base_url('file/login/')?>images/bg-01.jpg);">
           <span class="login100-form-title-1">
-           Rumah Sakit Umum Daerah<br> SI - Peralatan Medis
+           Rumah Sakit Umum Daerah Kota Solok<br> SI - Peralatan Medis
           </span>
         </div>
 

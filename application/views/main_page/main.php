@@ -84,7 +84,7 @@
       <div class="main-sidebar">
         <aside id="sidebar-wrapper">
           <div class="sidebar-brand">
-            <img src="<?=base_url()?>/assets/images/splash.png" alt="logo" class="logo" style="height: 150px;margin-top: 10px"><br>
+            <img src="<?=base_url()?>/assets/images/w.png" alt="logo" class="logo" style="height: 100px;margin-top: 10px"><br>
             <a href="<?=base_url()?>">SI - Peralatan Medis</a>
           </div>
           <div class="sidebar-brand sidebar-brand-sm">
@@ -145,7 +145,7 @@
         <?php $this->load->view($page);?>
         
       </div>
-      <script src="<?=base_url('file')?>/js/check.js"></script>
+     <!--  <script src="<?=base_url('file')?>/js/check.js"></script> -->
 
       <footer class="main-footer">
         <div class="footer-left">
