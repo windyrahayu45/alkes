@@ -76,10 +76,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
-	'database' => 'db_alkes',
+	'hostname' => 'buaja.xyz',
+	'username' => 'buajaxyz_windi',
+	'password' => 'Diskominfo1372@',
+	'database' => 'buajaxyz_db_alkes',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

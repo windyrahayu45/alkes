@@ -1,11 +1,11 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Mv_operator extends CI_Model {
+class Mv_ruangan extends CI_Model {
 
-	var $table = 'admin_modul';
-	var $column = array('admin_modul.id','modul','admin_modul.created_at','admin_modul.status');
-	var $order = array('admin_modul.id' => 'desc');
+	var $table = 'ruangan';
+	var $column = array('id_ruangan','nama_ruangan');
+	var $order = array('id_ruangan' => 'desc');
 
 	public function __construct()
 	{
@@ -17,9 +17,8 @@ class Mv_operator extends CI_Model {
 
 	private function _get_datatables_query()
 	{
-		$this->db->select('admin_modul.id,modul.modul,admin_modul.created_at,admin_modul.id_pegawai,admin_modul.status');
-		$this->db->from('admin_modul');
-		$this->db->join("modul","admin_modul.modul_id=modul.id");
+
+		$this->db->from($this->table);
 
 		$i = 0;
 	

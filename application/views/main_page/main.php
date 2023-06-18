@@ -124,6 +124,19 @@
 
                  <li id="pengguna"><a class="nav-link" href="<?= base_url('Pengguna')?>" ><i class="fas fa-user-circle"></i> <span>Data Penguna</span></a></li>
 
+
+
+
+                <li class="nav-item dropdown" id="setting-menu">
+                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span>Setting</span></a>
+                <ul class="dropdown-menu" id="setting-atur">
+                 
+                  <li id="ruangan"><a class="nav-link" href="<?=base_url('ruangan')?>">Nama Ruangan</a></li>
+                  <li id="history"><a class="nav-link" href="<?=base_url('history')?>">Tgl Pemeliharaan</a></li>
+                 
+                </ul>
+                </li>
+
               <?php } ?>
 
               

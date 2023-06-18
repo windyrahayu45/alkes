@@ -30,10 +30,39 @@ class Notif_pemeliharaan extends BD_Controller {
             ], REST_Controller::HTTP_OK);  
 
         }else { 
-           $this->response([
+
+            //jika tgl sekarang besar dari settiing awal pemeliharaan 
+            //tgl baru pemeliharaan selanjutnya
+            // $tgl_selanjutnya =  date('Y-m-d', strtotime('+6 month' , strtotime(date($tgl_awal))));
+
+            // //jika hari ini kecil dari tgl selanjutnya update sesuai tgl selanjutnya
+            // if(strtotime($date1) < strtotime($tgl_selanjutnya)){
+            //     $where['id_history'] = 1;
+            //     $data['tgl'] = $tgl_awal;
+            //     $update = $this->general2->update_data($where,$data,'history_pemeliharaan');
+            // }
+
+            
+
+            // $date1= date('Y-m-d');
+
+            $this->db->where('id_barang not in (select id_barang from afkir)');
+            $val = $this->general2->lihatisitabel('data_barang',['id_status'=>2]);
+
+            if ($val->num_rows()>0){
+                 $this->response([
+                    'error' => false,
+                    'message' => 'Segera lakukan Perbaikan Alat '
+                ], REST_Controller::HTTP_OK);  
+            }
+            else{
+                 $this->response([
                     'error' => TRUE,
                     'message' => 'Data tidak ditemukan'
-            ], REST_Controller::HTTP_NOT_FOUND);
+                ], REST_Controller::HTTP_NOT_FOUND);
+            }
+
+          
         }
     }
 

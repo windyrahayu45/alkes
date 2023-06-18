@@ -17,12 +17,13 @@ class Mv_pemeliharaan extends CI_Model {
 
 	private function _get_datatables_query()
 	{
-		$this->db->select('a.id_barang as kode_barang,a.nama,c.nama_ruangan,b.*,x.nama as nama_petugas');
+		$this->db->select('a.id_barang as kode_barang,a.nama,c.nama_ruangan,b.*');
 		$this->db->from($this->table);
 		$this->db->join("pemeliharaan b","a.id_barang = b.id_barang");
 		$this->db->join("ruangan c","a.id_ruangan = c.id_ruangan",'left');
-		$this->db->join("petugas x","b.id_petugas = x.id_petugas",'left');
-		$this->db->where('b.`kondisi_sesudah` IS NOT NULL ');
+		// $this->db->join("petugas x","b.id_petugas = x.id_petugas",'left');
+		// $this->db->where('b.`kondisi_sesudah` IS NOT NULL ');
+		$this->db->group_by("b.id_barang");
 		
 		$i = 0;
 	

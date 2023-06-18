@@ -25,20 +25,23 @@ class Dashboard extends CI_Controller {
 
         $data['afkir'] = $this->general2->lihatisitabel('afkir',null)->num_rows();
         $year = date("Y");
+        $n = $year - 2018;
         $label = array();
-        for ($i=0; $i <= 2 ; $i++) { 
+        $tahun = array();
+        for ($i=0; $i <= $n ; $i++) { 
 
         	$this->db->SELECT('a.*');
 	        $this->db->from('data_barang a');
 	        //$this->db->where('MONTH(a.tgl)', $i);
 	        $this->db->where('YEAR(a.tgl)', ( $year -$i));
-        	$data["bulan".$i] = $this->db->get()->num_rows();
-        	
+        	//$data["bulan".$i] = $this->db->get()->num_rows();
+        	$tahun[] = $this->db->get()->num_rows();
 			$label[]= $year -$i;
 			
         }
        	$data['label'] = $label;
-       //	print_r($data);die();
+       	$data['tahun'] = $tahun;
+        $data['n'] = $n;
 		$data['page']='admin/page';
 		$this->load->view('main_page/main',$data);
 		

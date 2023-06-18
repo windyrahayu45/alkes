@@ -126,15 +126,19 @@
   });
 
 
+var users = <?php echo json_encode($label); ?>;
+var tahun = <?php echo json_encode($tahun); ?>;
+console.log(tahun);
 
-  var ctx = document.getElementById("myChart2").getContext('2d');
+
+var ctx = document.getElementById("myChart2").getContext('2d');
 var myChart = new Chart(ctx, {
   type: 'bar',
   data: {
-    labels: [<?=date('Y')?>,<?=date('Y')-1?>,<?=date('Y')-2?>],
+    labels: users,
     datasets: [{
       label: 'Statistics',
-      data: [<?=$bulan0?>, <?=$bulan1?>, <?=$bulan2?>],
+      data: tahun,
       borderWidth: 2,
       backgroundColor: '#6777ef',
       borderColor: '#6777ef',

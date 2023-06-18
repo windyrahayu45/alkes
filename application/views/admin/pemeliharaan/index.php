@@ -41,13 +41,11 @@
                         <thead>
                         <tr>
                           <th>No</th>
+                          <th>Kode Barang</th>
                           <th>Nama</th>
                           <th>Lokasi</th>
-                          <th>Tanggal Tindakan</th>
-                          <th>Tanggal Selesai</th>
-                          <th>Petugas Teknisi</th>
-                          <th>Ket</th>
-                          <th>Setelah Pemeliharaan</th>
+                          <th>Detail</th>
+                         
                         </tr>
                         </thead>
                       </table>
